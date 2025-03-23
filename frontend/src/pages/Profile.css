@@ -1,0 +1,65 @@
+.profile-container {
+  padding: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.profile-container .ant-card {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-container .ant-typography {
+  margin-bottom: 24px;
+}
+
+.profile-container .ant-form-item {
+  margin-bottom: 24px;
+}
+
+.profile-container .ant-input-affix-wrapper {
+  border-radius: 6px;
+}
+
+.profile-container .ant-input-affix-wrapper:hover {
+  border-color: #40a9ff;
+}
+
+.profile-container .ant-input-affix-wrapper-focused {
+  border-color: #40a9ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+.profile-container .ant-btn {
+  height: 40px;
+  padding: 0 24px;
+  font-size: 16px;
+  border-radius: 6px;
+}
+
+.profile-container .ant-btn-primary {
+  background: linear-gradient(135deg, #1890ff 0%, #722ed1 100%);
+  border: none;
+}
+
+.profile-container .ant-btn-primary:hover {
+  background: linear-gradient(135deg, #40a9ff 0%, #9254de 100%);
+}
+
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 16px;
+  }
+
+  .profile-container .ant-row {
+    margin: 0 !important;
+  }
+
+  .profile-container .ant-col {
+    padding: 0 !important;
+  }
+
+  .profile-container .ant-form-item {
+    margin-bottom: 16px;
+  }
+} 

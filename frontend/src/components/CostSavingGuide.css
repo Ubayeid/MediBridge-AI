@@ -1,0 +1,112 @@
+.cost-saving-guide {
+  padding: 24px;
+}
+
+.guide-header {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.guide-header h2 {
+  margin: 0 0 8px 0;
+  color: #1890ff;
+}
+
+.guide-header .subtitle {
+  color: #595959;
+  margin: 0;
+}
+
+.tip-item {
+  padding: 0 !important;
+}
+
+.tip-card {
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.tip-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.tip-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tip-title h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #262626;
+}
+
+.tip-title .anticon {
+  font-size: 20px;
+  color: #1890ff;
+}
+
+.tip-description {
+  color: #595959;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.tip-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.estimated-savings {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #52c41a;
+  font-weight: 500;
+}
+
+.estimated-savings .anticon {
+  font-size: 16px;
+}
+
+.ant-tabs-nav {
+  margin-bottom: 24px;
+}
+
+.ant-tabs-tab {
+  padding: 12px 24px;
+}
+
+.ant-tabs-tab-active {
+  background-color: #e6f7ff;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .tip-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .tip-footer {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .ant-tabs-tab {
+    padding: 8px 16px;
+  }
+} 

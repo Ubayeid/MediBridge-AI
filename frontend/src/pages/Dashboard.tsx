@@ -1,16 +1,57 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material';
+import { Card, Row, Col, Statistic, Button } from 'antd';
+import { useNavigate } from 'react-router-dom';
+import { useAppState } from '../store';
 
 const Dashboard: React.FC = () => {
+  const navigate = useNavigate();
+  const { healthRecords, insuranceInfo } = useAppState();
+
   return (
-    <Box>
-      <Typography variant="h4" gutterBottom>
-        Welcome to MediBridge AI
-      </Typography>
-      <Typography variant="body1">
-        Your AI-powered healthcare assistant for managing healthcare costs, appointments, and more.
-      </Typography>
-    </Box>
+    <div>
+      <h1>Welcome to MediBridge AI</h1>
+      <Row gutter={[16, 16]}>
+        <Col span={8}>
+          <Card>
+            <Statistic
+              title="Upcoming Appointments"
+              value={0}
+              suffix={
+                <Button type="link" onClick={() => navigate('/appointments')}>
+                  View All
+                </Button>
+              }
+            />
+          </Card>
+        </Col>
+        <Col span={8}>
+          <Card>
+            <Statistic
+              title="Health Records"
+              value={healthRecords.length}
+              suffix={
+                <Button type="link" onClick={() => navigate('/health-records')}>
+                  View All
+                </Button>
+              }
+            />
+          </Card>
+        </Col>
+        <Col span={8}>
+          <Card>
+            <Statistic
+              title="Insurance Status"
+              value={insuranceInfo ? 'Active' : 'Not Set'}
+              suffix={
+                <Button type="link" onClick={() => navigate('/insurance')}>
+                  Manage
+                </Button>
+              }
+            />
+          </Card>
+        </Col>
+      </Row>
+    </div>
   );
 };
 

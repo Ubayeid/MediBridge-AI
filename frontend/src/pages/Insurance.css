@@ -1,0 +1,245 @@
+.insurance {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.insurance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.insurance-header h1 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+.insurance-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.plan-card {
+  height: fit-content;
+}
+
+.plan-info {
+  padding: 1rem 0;
+}
+
+.plan-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.plan-header h3 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+.plan-type {
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.9rem;
+}
+
+.plan-name {
+  color: #7f8c8d;
+  margin: 0 0 1.5rem 0;
+}
+
+.coverage-section {
+  margin-bottom: 2rem;
+}
+
+.coverage-section h4 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.coverage-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.coverage-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.coverage-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.coverage-item span {
+  min-width: 60px;
+}
+
+.insurance-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.insurance-actions .ant-btn {
+  padding: 4px 8px;
+}
+
+.plan-details {
+  display: grid;
+  gap: 1rem;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.detail-label {
+  color: #7f8c8d;
+}
+
+.detail-value {
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.claims-card {
+  height: fit-content;
+}
+
+.claims-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.claim-item {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.claim-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.claim-info h4 {
+  margin: 0 0 0.5rem 0;
+  color: #2c3e50;
+}
+
+.claim-info .provider {
+  color: #7f8c8d;
+  margin: 0 0 0.5rem 0;
+}
+
+.claim-info .date {
+  color: #34495e;
+  margin: 0;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.status-approved {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status-pending {
+  background: #fff3e0;
+  color: #ef6c00;
+}
+
+.status-rejected {
+  background: #ffebee;
+  color: #c62828;
+}
+
+.claim-details {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.amount, .reimbursement {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.label {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+.value {
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.claim-form-card {
+  margin-top: 2rem;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .insurance {
+    padding: 16px;
+  }
+
+  .insurance-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .insurance-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .coverage-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .claim-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .claim-details {
+    flex-direction: column;
+    gap: 1rem;
+  }
+} 

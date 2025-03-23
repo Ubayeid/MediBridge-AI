@@ -1,55 +1,33 @@
 # MediBridge AI
 
-An AI-powered healthcare assistant for international students in the U.S., helping them manage healthcare costs, find appropriate treatment options, navigate insurance, and access university-specific health services.
+MediBridge AI is an AI-powered healthcare assistant designed specifically for international students in the U.S. The platform provides comprehensive healthcare management tools and resources to help students navigate the U.S. healthcare system effectively.
 
 ## Features
 
-- 🤖 AI-Powered Healthcare Cost Estimator
-- 🏥 AI Symptom Checker & Triage
-- 📅 Smart Appointment Scheduler
-- 🏫 Cross-Campus Healthcare Access
-- 🏥 Insurance Integration & Coverage Checker
-- 💰 Cost-Saving Tips & Resource Guide
-- 📋 Health Record Hub
+- **Healthcare Cost Estimator**: Get instant estimates for common medical procedures and services
+- **AI Symptom Checker**: Receive preliminary health assessments and guidance
+- **Appointment Scheduler**: Easily schedule and manage medical appointments
+- **Cross-Campus Healthcare Access**: Find and access healthcare facilities from partnering universities
+- **Insurance Integration**: Manage and understand your health insurance coverage
+- **Cost-Saving Tips**: Access personalized recommendations for healthcare cost optimization
+- **Health Record Hub**: Securely store and share your health records with healthcare providers
 
 ## Tech Stack
 
-- **Frontend**: React.js with TypeScript
-- **Backend**: Python with FastAPI
-- **Database**: PostgreSQL
-- **AI/ML**: 
-  - GPT-4/MedLM for symptom checking
-  - XGBoost for appointment prediction
-- **APIs**: OpenFDA, FHIR, GoodRx
-- **Cloud**: AWS (HIPAA-compliant)
-- **Authentication**: OAuth 2.0
-
-## Project Structure
-
-```
-medibridge-ai/
-├── frontend/                 # React frontend application
-├── backend/                  # FastAPI backend application
-│   ├── api/                 # API endpoints
-│   ├── models/              # Database models
-│   ├── services/            # Business logic
-│   └── utils/               # Utility functions
-├── ml/                      # Machine learning models
-│   ├── cost_estimator/      # Cost prediction models
-│   ├── symptom_checker/     # Symptom analysis models
-│   └── appointment_predictor/# Appointment scheduling models
-├── docs/                    # Documentation
-└── tests/                   # Test suites
-```
+- **Frontend**: React, TypeScript, Ant Design
+- **Backend**: Node.js, Express, TypeScript
+- **Database**: MongoDB
+- **AI/ML**: TensorFlow.js, OpenAI API
+- **Authentication**: JWT, OAuth 2.0
+- **Cloud Services**: AWS (EC2, S3, Lambda)
 
 ## Getting Started
 
 ### Prerequisites
 
-- Python 3.8+
-- Node.js 16+
-- PostgreSQL 13+
-- Docker (optional)
+- Node.js (v14 or higher)
+- npm (v6 or higher)
+- MongoDB (v4.4 or higher)
 
 ### Installation
 
@@ -59,48 +37,84 @@ git clone https://github.com/yourusername/medibridge-ai.git
 cd medibridge-ai
 ```
 
-2. Set up the backend:
-```bash
-cd backend
-python -m venv venv
-source venv/bin/activate  # On Windows: .\venv\Scripts\activate
-pip install -r requirements.txt
-```
-
-3. Set up the frontend:
+2. Install frontend dependencies:
 ```bash
 cd frontend
 npm install
 ```
 
-4. Set up environment variables:
+3. Install backend dependencies:
 ```bash
-cp .env.example .env
-# Edit .env with your configuration
+cd ../backend
+npm install
 ```
 
-5. Start the development servers:
-```bash
-# Backend
-cd backend
-uvicorn main:app --reload
+4. Create a `.env` file in the backend directory with the following variables:
+```
+MONGODB_URI=your_mongodb_uri
+JWT_SECRET=your_jwt_secret
+OPENAI_API_KEY=your_openai_api_key
+AWS_ACCESS_KEY_ID=your_aws_access_key
+AWS_SECRET_ACCESS_KEY=your_aws_secret_key
+```
 
-# Frontend
+### Running the Application
+
+1. Start the backend server:
+```bash
+cd backend
+npm run dev
+```
+
+2. Start the frontend development server:
+```bash
 cd frontend
 npm start
 ```
 
+The application will be available at `http://localhost:3000`.
+
+## Project Structure
+
+```
+medibridge-ai/
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── services/
+│   │   ├── utils/
+│   │   └── App.tsx
+│   ├── public/
+│   ├── package.json
+│   └── tsconfig.json
+├── backend/
+│   ├── src/
+│   │   ├── controllers/
+│   │   ├── models/
+│   │   ├── routes/
+│   │   ├── services/
+│   │   └── app.ts
+│   ├── package.json
+│   └── tsconfig.json
+└── README.md
+```
+
 ## Contributing
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
-- OpenFDA API for drug and treatment cost data
-- FHIR API for healthcare data standards
-- GoodRx API for medication pricing
-- University healthcare providers and insurance partners 
+- OpenAI for providing the AI capabilities
+- Ant Design for the UI components
+- MongoDB for the database solution
+- AWS for cloud infrastructure 

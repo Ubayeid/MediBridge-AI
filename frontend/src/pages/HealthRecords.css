@@ -1,0 +1,158 @@
+.health-records {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.health-records-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.health-records-header h1 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+.health-records-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.record-card {
+  padding: 1.5rem;
+}
+
+.record-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.record-info h3 {
+  margin: 0 0 0.5rem 0;
+  color: #2c3e50;
+}
+
+.record-info .provider {
+  color: #7f8c8d;
+  margin: 0 0 0.5rem 0;
+}
+
+.record-info .date {
+  color: #34495e;
+  margin: 0;
+}
+
+.record-type {
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.9rem;
+}
+
+.record-content {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.record-content h4 {
+  color: #2c3e50;
+  margin: 0 0 0.5rem 0;
+}
+
+.record-content p {
+  color: #34495e;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.medications-section ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.5rem;
+}
+
+.medications-section li {
+  background: #f8f9fa;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  color: #34495e;
+  font-size: 0.9rem;
+}
+
+.attachments-section ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.attachments-section li {
+  margin-bottom: 0.5rem;
+}
+
+.attachment-link {
+  color: #3498db;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.attachment-link:hover {
+  text-decoration: underline;
+}
+
+.record-form-card {
+  margin-top: 2rem;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.shared-with {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.record-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.record-actions .ant-btn {
+  padding: 4px 8px;
+}
+
+@media (max-width: 768px) {
+  .health-records {
+    padding: 16px;
+  }
+
+  .health-records-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .record-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .medications-section ul {
+    grid-template-columns: 1fr;
+  }
+} 

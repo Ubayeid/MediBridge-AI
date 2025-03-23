@@ -1,0 +1,33 @@
+.early-schedule-container {
+  padding: 24px;
+}
+
+.schedule-header {
+  margin-bottom: 24px;
+}
+
+.schedule-content {
+  background: white;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.appointment-list {
+  margin-top: 16px;
+}
+
+.appointment-item {
+  padding: 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.appointment-item:last-child {
+  border-bottom: none;
+}
+
+.appointment-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+} 

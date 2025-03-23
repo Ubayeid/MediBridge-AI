@@ -1,0 +1,67 @@
+.cost-saving-guide {
+  padding: 24px;
+}
+
+.guide-tabs {
+  margin: 24px 0;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.tip-card {
+  transition: all 0.3s ease;
+}
+
+.tip-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.tip-description {
+  display: block;
+  margin: 16px 0;
+  color: #666;
+}
+
+.tip-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.learn-more {
+  color: #1890ff;
+  text-decoration: none;
+}
+
+.learn-more:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .cost-saving-guide {
+    padding: 16px;
+  }
+
+  .guide-tabs {
+    margin: 16px 0;
+  }
+
+  .tips-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+} 

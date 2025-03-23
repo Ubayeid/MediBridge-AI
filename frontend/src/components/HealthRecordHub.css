@@ -1,0 +1,94 @@
+.health-record-hub {
+  padding: 24px;
+}
+
+.hub-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.hub-header h2 {
+  margin: 0;
+  color: #1890ff;
+}
+
+.hub-header .anticon {
+  margin-right: 8px;
+}
+
+.record-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #262626;
+}
+
+.record-title .anticon {
+  color: #1890ff;
+}
+
+.shared-with {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.record-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.record-actions .ant-btn-link {
+  padding: 0;
+  height: auto;
+}
+
+.ant-table-thead > tr > th {
+  background-color: #fafafa;
+  font-weight: 600;
+}
+
+.ant-table-tbody > tr:hover > td {
+  background-color: #e6f7ff;
+}
+
+.ant-modal-content {
+  padding: 24px;
+}
+
+.ant-form-item {
+  margin-bottom: 16px;
+}
+
+.ant-form-item-label > label {
+  font-weight: 500;
+}
+
+.ant-select-selector {
+  width: 100%;
+}
+
+.ant-modal-footer {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #f0f0f0;
+}
+
+@media (max-width: 768px) {
+  .hub-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .record-actions {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .ant-table {
+    overflow-x: auto;
+  }
+} 

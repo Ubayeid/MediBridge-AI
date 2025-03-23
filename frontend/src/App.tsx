@@ -1,73 +1,125 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-import { Provider } from 'react-redux';
-import { store } from './store';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { Layout, Menu, Button, Avatar, Dropdown } from 'antd';
+import type { MenuProps } from 'antd';
+import {
+  DashboardOutlined,
+  MessageOutlined,
+  DollarOutlined,
+  MenuOutlined,
+  UserOutlined,
+  SettingOutlined,
+  LogoutOutlined,
+} from '@ant-design/icons';
+import Dashboard from './components/Dashboard/Dashboard';
+import ChatBot from './components/ChatBot/ChatBot';
+import CostEstimator from './components/CostEstimator/CostEstimator';
+import logo from './assets/logo.svg';
+import './index.css';
+import './components/layout/Layout.css';
 
-// Layout components
-import Layout from './components/layout/Layout';
+const { Header, Sider, Content } = Layout;
 
-// Page components
-import Dashboard from './pages/Dashboard';
-import CostEstimator from './pages/CostEstimator';
-import SymptomChecker from './pages/SymptomChecker';
-import Appointments from './pages/Appointments';
-import Insurance from './pages/Insurance';
-import HealthRecords from './pages/HealthRecords';
-import Profile from './pages/Profile';
+const App: React.FC = () => {
+  const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
 
-// Create theme
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#2196f3',
+  const userMenuItems: MenuProps['items'] = [
+    {
+      key: 'profile',
+      icon: <UserOutlined />,
+      label: 'Profile',
     },
-    secondary: {
-      main: '#f50057',
+    {
+      key: 'settings',
+      icon: <SettingOutlined />,
+      label: 'Settings',
     },
-    background: {
-      default: '#f5f5f5',
+    {
+      type: 'divider',
     },
-  },
-  typography: {
-    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-    h1: {
-      fontSize: '2.5rem',
-      fontWeight: 500,
+    {
+      key: 'logout',
+      icon: <LogoutOutlined />,
+      label: 'Logout',
     },
-    h2: {
-      fontSize: '2rem',
-      fontWeight: 500,
-    },
-    h3: {
-      fontSize: '1.75rem',
-      fontWeight: 500,
-    },
-  },
-});
+  ];
 
-function App() {
+  const navigationItems = [
+    {
+      key: 'dashboard',
+      icon: <DashboardOutlined />,
+      label: <Link to="/">Dashboard</Link>,
+    },
+    {
+      key: 'chatbot',
+      icon: <MessageOutlined />,
+      label: <Link to="/chat">AI Assistant</Link>,
+    },
+    {
+      key: 'cost-estimator',
+      icon: <DollarOutlined />,
+      label: <Link to="/cost-estimator">Cost Estimator</Link>,
+    },
+  ];
+
+  const toggleMobileMenu = () => {
+    setMobileMenuVisible(!mobileMenuVisible);
+  };
+
   return (
-    <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Router>
-          <Layout>
-            <Routes>
-              <Route path="/" element={<Dashboard />} />
-              <Route path="/cost-estimator" element={<CostEstimator />} />
-              <Route path="/symptom-checker" element={<SymptomChecker />} />
-              <Route path="/appointments" element={<Appointments />} />
-              <Route path="/insurance" element={<Insurance />} />
-              <Route path="/health-records" element={<HealthRecords />} />
-              <Route path="/profile" element={<Profile />} />
-            </Routes>
+    <Router>
+      <Layout className="min-h-screen">
+        <Header className="header">
+          <div className="header-logo">
+            <Button
+              type="text"
+              icon={<MenuOutlined />}
+              onClick={toggleMobileMenu}
+              className="lg:hidden text-white"
+            />
+            <img src={logo} alt="MediBridge AI" />
+            <h1 className="text-white text-xl font-semibold hidden sm:block">
+              MediBridge AI
+            </h1>
+          </div>
+          <div className="flex items-center gap-4">
+            <Dropdown
+              menu={{ items: userMenuItems }}
+              placement="bottomRight"
+              trigger={['click']}
+            >
+              <Avatar
+                icon={<UserOutlined />}
+                className="bg-primary-700 cursor-pointer hover:opacity-80 transition-opacity"
+              />
+            </Dropdown>
+          </div>
+        </Header>
+        <Layout>
+          <Sider
+            width={200}
+            className={`sider ${mobileMenuVisible ? 'mobile-visible' : ''}`}
+          >
+            <Menu
+              mode="inline"
+              defaultSelectedKeys={['dashboard']}
+              className="h-full border-0"
+              items={navigationItems}
+            />
+          </Sider>
+          <Layout className="content-layout">
+            <Content className="content">
+              <Routes>
+                <Route path="/" element={<Dashboard />} />
+                <Route path="/chat" element={<ChatBot />} />
+                <Route path="/cost-estimator" element={<CostEstimator />} />
+              </Routes>
+            </Content>
           </Layout>
-        </Router>
-      </ThemeProvider>
-    </Provider>
+        </Layout>
+      </Layout>
+    </Router>
   );
-}
+};
 
 export default App; 
